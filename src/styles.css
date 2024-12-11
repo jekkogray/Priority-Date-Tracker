@@ -1,0 +1,92 @@
+/*
+	Table Responsive
+	===================
+	Author: https://github.com/pablorgarcia
+ */
+
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+:root {
+	--text-color: #e7f3f5;
+	--background-color: hsl(231, 11%, 23%);
+	--background-color-50: hsl(204, 86%, 6%);
+	--primary-color: #2ba981;
+	--secondary-color: #6f2c51;
+	--accent-color: #b85d4c;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	color: var(--text-color);
+	background-color: var(--background-color);
+	margin: 0;
+	width: 100vw;
+}
+
+table{
+	row-gap: 1rem;
+}
+
+td {
+	padding: 1rem;
+	width: 20rem;
+}
+
+tr:hover {
+	background-color: #464a52;
+	-webkit-box-shadow: 0 6px 6px -6px #0e1119;
+	-moz-box-shadow: 0 6px 6px -6px #0e1119;
+	box-shadow: 0 6px 6px -6px #0e1119;
+}
+
+td:hover {
+	background-color: #fff842;
+	color: #403e10;
+	font-weight: bold;
+
+	box-shadow: #7f7c21 -1px 1px, #7f7c21 -2px 2px, #7f7c21 -3px 3px,
+		#7f7c21 -4px 4px, #7f7c21 -5px 5px, #7f7c21 -6px 6px;
+	transform: translate3d(6px, -6px, 0);
+
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+	transition-timing-function: line;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+}
+
+.input {
+	padding: 1rem;
+	background-color: var(--text-color);
+	border-radius: 1rem;
+}
+
+.days-count {
+	float: right;
+	font-size: smaller;
+	font-weight: bold;
+	color: #464a52;
+}
+
+.positive {
+	color: var(--primary-color);
+}
+
+.negative {
+	color: var(--accent-color);
+}
+
+#visa-page {
+	background-color: var(--background-color-50);
+	max-width: 100%;
+	max-height: 100%;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 1rem;
+}

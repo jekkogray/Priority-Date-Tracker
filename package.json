@@ -1,0 +1,28 @@
+{
+  "name": "priority-date-tracker-app",
+  "version": "1.0.0",
+  "description": "An app that displays the dreaded wait of visa in the usa. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "echo \"Starting Priority Date Tracker App\" && electron src/index.j",
+    "dev": "echo \"Starting Dev Priority Date Tracker App\" && electronmon src/index.js"
+  },
+  "keywords": [
+    "app",
+    "tracker",
+    "visa",
+    "us",
+    "scraper",
+    "web"
+  ],
+  "author": "Jekko Syquia",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electronmon": "^2.0.3"
+  },
+  "dependencies": {
+    "jssoup": "^0.0.15"
+  }
+}
