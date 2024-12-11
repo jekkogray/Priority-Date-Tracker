@@ -7,7 +7,6 @@ class PriorityDateTrackerApp {
 
 	_getVisaRequest(month, year, getVisaPageResponseCallback) {
 		let requestId = (Date.now() + Math.random() * 10.5).toString(36);
-		console.log(requestId);
 		if (month && year) {
 			window.scraperAPI.getVisaPageRequest({
 				month: month,
@@ -46,7 +45,9 @@ class PriorityDateTrackerApp {
 	createUI(elementId) {
 		this.visaPage = document.getElementById(elementId);
 		let currentYearTable = document.createElement("div");
+		currentYearTable.className = "current-year-container";
 		let previousYearTable = document.createElement("div");
+		previousYearTable.className = "previous-year-container";
 
 		const updateDateDifferences = () => {
 			if (this.currentYearArray && this.previousYearArray) {
@@ -60,7 +61,6 @@ class PriorityDateTrackerApp {
 								this.currentYearArray[trIndex][tdIndex];
 
 							if (!currentDate) {
-								console.log("Can't compare date");
 								return;
 							}
 
@@ -102,7 +102,6 @@ class PriorityDateTrackerApp {
 								this.currentYearArray[trIndex][tdIndex];
 
 							if (!currentDate) {
-								console.log("Can't compare date");
 								return;
 							}
 
@@ -151,7 +150,6 @@ class PriorityDateTrackerApp {
 				previousYearTable
 					.querySelectorAll("tr")
 					.forEach((tr, trIndex) => {
-						console.log(trIndex);
 						datesArray[trIndex] = [];
 
 						// Parse the dates
@@ -199,7 +197,6 @@ class PriorityDateTrackerApp {
 				currentYearTable
 					.querySelectorAll("tr")
 					.forEach((tr, trIndex) => {
-						console.log(trIndex);
 						datesArray[trIndex] = [];
 
 						// Parse the dates
@@ -229,6 +226,13 @@ class PriorityDateTrackerApp {
 				updateDateDifferences();
 			}
 		);
+
+		const titleSpan = document.createElement("Span");
+		titleSpan.className = "title"
+		titleSpan.innerText =
+			"FINAL ACTION DATES FOR FAMILY-SPONSORED PREFERENCE CASES";
+
+		this.visaPage.appendChild(titleSpan);
 
 		this.visaPage.appendChild(currentYearInput);
 		this.visaPage.appendChild(previousYearInput);
